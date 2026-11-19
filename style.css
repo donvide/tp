@@ -1,0 +1,255 @@
+/* ---------- Général ---------- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 25px 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: #222;
+    background: #eef2f7;
+}
+
+h2 {
+    margin: 0 0 15px;
+    font-size: 18px;
+    color: #1a56a0;
+}
+
+a {
+    color: #1a56a0;
+}
+
+/* ---------- Carte principale ---------- */
+.carte {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 25px 15px;
+    background: #fff;
+    border: 1px solid #cdd6e2;
+    border-radius: 12px;
+}
+
+.entete {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 12px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #e1e7f0;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #1a56a0;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.utilisateur {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-weight: bold;
+}
+
+.point {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background: #1a56a0;
+    border-radius: 50%;
+}
+
+.lien-deconnexion {
+    color: #d93025;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+/* ---------- Boutons ---------- */
+.bouton {
+    display: inline-block;
+    padding: 9px 20px;
+    font-size: 15px;
+    color: #fff;
+    background: #6d8ece;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.bouton:hover {
+    background: #134278;
+}
+
+/* ---------- Disposition de la page d'accueil ---------- */
+.contenu {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.colonne-formulaire {
+    flex: 1 1 40%;
+    padding: 18px;
+    background: #f8fbff;
+    border: 1px solid #c9dcf5;
+    border-radius: 10px;
+}
+
+.colonne-historique {
+    flex: 1 1 60%;
+    min-width: 0;
+}
+
+/* ---------- Formulaire ---------- */
+.champs {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.champ {
+    flex: 1;
+    margin-bottom: 12px;
+}
+
+.champs .champ {
+    margin-bottom: 0;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #444;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 15px;
+    border: 2px solid #b9c3d2;
+    border-radius: 6px;
+    outline: none;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #1a56a0;
+}
+
+/* Bordures de résultat */
+input.champ-ok {
+    border-color: #2e9d4f;
+}
+
+input.champ-ko {
+    border-color: #d93025;
+}
+
+.formulaire .bouton {
+    margin-top: 5px;
+}
+
+/* ---------- Messages ---------- */
+.positif {
+    color: #2e9d4f;
+}
+
+.negatif {
+    color: #d93025;
+}
+
+.message {
+    margin: 0 0 12px;
+    font-weight: bold;
+}
+
+.erreurs {
+    margin: 0 0 12px;
+    padding: 10px 10px 10px 30px;
+    color: #d93025;
+    background: #fdecea;
+    border: 1px solid #f5c6c2;
+    border-radius: 6px;
+}
+
+.info {
+    color: #555;
+}
+
+/* ---------- Tableau de l'historique ---------- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+th,
+td {
+    padding: 8px 10px;
+    text-align: left;
+    border-bottom: 1px solid #e1e7f0;
+}
+
+th {
+    background: #f0f4fa;
+    color: #1a56a0;
+}
+
+td {
+    color: #333;
+}
+
+tr.positif td {
+    color: #2e9d4f;
+}
+
+tr.negatif td {
+    color: #d93025;
+}
+
+/* ---------- Pages d'authentification ---------- */
+.carte-auth {
+    max-width: 380px;
+    margin: 0 auto;
+    padding: 10px 5px 20px;
+}
+
+.lien-auth {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #555;
+}
+
+/* ---------- Pied de page ---------- */
+.pied {
+    margin-top: 25px;
+    padding-top: 10px;
+    font-size: 12px;
+    text-align: center;
+    color: #8a94a3;
+    border-top: 1px solid #e1e7f0;
+}
+
+/* ---------- Petits écrans ---------- */
+@media (max-width: 700px) {
+    .contenu {
+        flex-direction: column;
+    }
+
+    .champs {
+        flex-direction: column;
+    }
+}
