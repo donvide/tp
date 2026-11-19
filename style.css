@@ -116,6 +116,19 @@ a {
     display: flex;
     gap: 15px;
     margin-bottom: 15px;
+    padding: 14px;
+    background: #fff;
+    border: 2px solid #e1e7f0;
+    border-radius: 10px;
+}
+
+/* Cadre contenant les champs : vert si anagrammes, rouge sinon */
+.champs.champs-ok {
+    border-color: #2e9d4f;
+}
+
+.champs.champs-ko {
+    border-color: #d93025;
 }
 
 .champ {
@@ -154,12 +167,69 @@ input.champ-ok {
     border-color: #2e9d4f;
 }
 
+
 input.champ-ko {
     border-color: #d93025;
 }
 
 .formulaire .bouton {
     margin-top: 5px;
+}
+
+/* Formulaire de vérification : le bouton est replacé visuellement sous les champs */
+.formulaire-verification {
+    display: flex;
+    flex-direction: column;
+}
+
+.formulaire-verification .champs {
+    order: 1;
+}
+
+.formulaire-verification .erreurs,
+.formulaire-verification .message {
+    order: 2;
+}
+
+.formulaire-verification .bouton-soumettre {
+    order: 3;
+    align-self: flex-start;
+}
+
+/* Icône d'effacement dans les champs */
+.champ-saisie {
+    position: relative;
+}
+
+.champ-saisie input {
+    padding-right: 34px;
+}
+
+.effacer {
+    position: absolute;
+    top: 50%;
+    right: 6px;
+    transform: translateY(-50%);
+    width: 22px;
+    height: 22px;
+    padding: 0;
+    font-size: 18px;
+    line-height: 1;
+    color: #8a94a3;
+    background: transparent;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.effacer:hover {
+    color: #d93025;
+    background: #eef2f7;
+}
+
+/* L'icône est masquée quand le champ est vide */
+.champ-saisie input:placeholder-shown + .effacer {
+    visibility: hidden;
 }
 
 /* ---------- Messages ---------- */

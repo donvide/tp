@@ -8,7 +8,8 @@ Aucun JavaScript n'est utilisé : uniquement HTML5, CSS3, PHP 8 et MySQL (PDO).
 ## Fonctionnalités
 
 - Vérification de deux chaînes (sans tenir compte de la casse ni des espaces).
-- Champs encadrés en vert si les chaînes sont des anagrammes, en rouge sinon.
+- Champs et cadre du formulaire en vert si les chaînes sont des anagrammes, en rouge sinon.
+- Icône « × » dans chaque champ pour le vider d'un clic (sans JavaScript).
 - Validation : champs vides, caractères non autorisés.
 - Inscription (pseudo, mot de passe, confirmation), pseudo unique.
 - Connexion / déconnexion avec sessions PHP.
@@ -151,9 +152,14 @@ La variante « trier les deux chaînes puis les comparer » serait en `O(n log n
 ### Gestion des erreurs
 ![Erreurs](captures/07-erreurs.png)
 
+### Icône d'effacement des champs
+![Champs remplis](captures/08-champs-remplis.png)
+
 ## Remarques
 
 - Les requêtes SQL utilisent des requêtes préparées PDO (protection contre l'injection SQL).
 - Les valeurs affichées sont échappées avec `htmlspecialchars()` (protection XSS).
 - Le formulaire accepte les lettres (accents compris), les espaces, les apostrophes
   et les tirets ; les chiffres et la ponctuation sont refusés.
+- L'icône « × » est un bouton de soumission nommé `vider` : PHP vide le champ concerné
+  sans lancer la vérification. Aucun JavaScript n'est nécessaire.
